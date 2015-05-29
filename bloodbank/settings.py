@@ -19,10 +19,10 @@ BASE_DIR = lambda *x: os.path.join(
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '_5gy+1bm1@ghp3kii7d)5$wc_*s%3+%2ot_6rzezy-op%jbut-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') == 'True'
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -91,6 +91,9 @@ Blood Bank Settings
 ==================================================================
 '''
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+
 APPEND_SLASH = True
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -129,14 +132,14 @@ MEDIA_ROOT = 'media'
 AVATAR_ROOT = os.path.join(MEDIA_ROOT, 'avatar')
 
 TEMPLATE_DIRS = [BASE_DIR('templates')]
-# STATICFILES_DIRS = [BASE_DIR('static')]
+STATICFILES_DIRS = [BASE_DIR('static')]
 
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_SECURE_URLS = os.environ.get('AWS_S3_SECURE_URLS') == 'True'
-AWS_QUERYSTRING_AUTH = os.environ.get('AWS_QUERYSTRING_AUTH') == 'True'
-AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_S3_ACCESS_KEY_ID')
-AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_SECURE_URLS = os.environ.get('AWS_S3_SECURE_URLS') == 'True'
+# AWS_QUERYSTRING_AUTH = os.environ.get('AWS_QUERYSTRING_AUTH') == 'True'
+# AWS_S3_ACCESS_KEY_ID = os.environ.get('AWS_S3_ACCESS_KEY_ID')
+# AWS_S3_SECRET_ACCESS_KEY = os.environ.get('AWS_S3_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 S3_URL = ''
 
 CORS_ORIGIN_ALLOW_ALL = True

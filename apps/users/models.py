@@ -12,11 +12,14 @@ class Hospital(models.Model):
     location = models.CharField(max_length=150)
     number = models.CharField(max_length=15)
 
+    def __unicode__(self):
+        return self.name
+
 
 class UserManager(BaseUserManager):
 
     def create_user(
-            self, email, first_name, last_name, hospital, contact_no,
+            self, email, first_name, last_name, contact_no,
             password):
         """
         Creates and saves a User with the given email,
@@ -29,8 +32,7 @@ class UserManager(BaseUserManager):
             email=self.normalize_email(email),
             first_name=first_name,
             last_name=last_name,
-            contact_no=contact_no,
-            hospital=hospital
+            contact_no=contact_no
         )
 
         user.set_password(password)
@@ -39,8 +41,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(
-            self, email, password, first_name, last_name, contact_no,
-            hospital):
+            self, email, password, first_name, last_name, contact_no):
         """
         Creates and saves a superuser with the given email, password,
         first_name and last_name.

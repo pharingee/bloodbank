@@ -1,0 +1,32 @@
+{% extends 'layouts/donation.html' %}
+{% load form_filters %}
+{% block title %}Donation Events :: {% endblock %}
+
+{% block main %}
+<div class="content-section-b" style="min-height: 77vh">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2 class="text-center">Events Coming Up</h2>
+        <div class="row">
+        {% for event in events %}
+          <div class="col-sm-6">
+            <h3>{{event.title}}</h3>
+            <p>{{event.text}}</p><br><br>
+            <p>{{event.date}}</p>
+          </div>
+        {% endfor %}
+        {% if not events %}
+          <p class="text-center">No events yet.</p>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+</div>
+<!-- /.content-section-b -->
+{% endblock %}

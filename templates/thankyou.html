@@ -1,0 +1,22 @@
+{% extends 'layouts/donation.html' %}
+{% load form_filters %}
+{% block title %}Donation :: {% endblock %}
+
+{% block main %}
+<div class="content-section-b" style="min-height: 77vh">
+      <div class="container">
+
+          <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                  <h2 class="text-center">Thank You</h2>
+                  <p class="lead text-center text-muted small" style="font-size: 1em">Thank you for your interest in blood donation. Please visit the hospital you provided to donate.</p><br><br>
+                  <p><a href="{% url 'home' %}"></a></p>
+              </div>
+          </div>
+
+      </div>
+      <!-- /.container -->
+
+  </div>
+  <!-- /.content-section-b -->
+{% endblock %}

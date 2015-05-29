@@ -1,0 +1,33 @@
+{% extends 'layouts/donation.html' %}
+{% load form_filters %}
+{% block title %}Donation :: {% endblock %}
+
+{% block main %}
+<div class="content-section-b" style="min-height: 77vh">
+      <div class="container">
+
+          <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                  <h2 class="text-center">Donate</h2>
+                  <p class="lead text-center text-muted small" style="font-size: 1em">Fill this form to indicate your interest in donation and then visit your nearest hospital to donate blood.</p>
+                  <form class="form" method="POST">
+                      {% csrf_token %}
+                      {% for field in form %}
+                          <div class="form-group">
+                              {{ field.errors }}{% if field.field.widget|klass != 'HiddenInput' %}
+                              {{ field.label_tag }}{% endif %}  {{ field }}
+                          </div>
+                      {% endfor %}
+                      <div class="form-group">
+                          <input type="submit" class="form-control btn btn-primary" value="Next">
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+      </div>
+      <!-- /.container -->
+
+  </div>
+  <!-- /.content-section-b -->
+{% endblock %}

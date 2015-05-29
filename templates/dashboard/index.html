@@ -1,0 +1,138 @@
+{% extends 'layouts/dashboard.html' %}
+
+{% block main %}
+<noscript>
+    <div class="alert alert-block span10">
+      <h4 class="alert-heading">Warning!</h4>
+      <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+  </div>
+</noscript>
+
+<!-- start: Content -->
+<div id="content" class="span10">
+
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home"></i>
+      <a href="index.html">Home</a>
+      <i class="icon-angle-right"></i>
+  </li>
+  <li><a href="#">Dashboard</a></li>
+</ul>
+
+<div class="row-fluid">
+
+    <div class="span3 statbox purple" onTablet="span6" onDesktop="span3">
+
+      <div class="number">4 <i class="icon-arrow-up"></i></div>
+      <div class="title">donation requests</div>
+      <div class="footer">
+        <a href="#"> view all requests</a>
+    </div>
+</div>
+<div class="span3 statbox green" onTablet="span6" onDesktop="span3">
+  <div class="number">10 <i class="icon-arrow-up"></i></div>
+  <div class="title">available blood packs</div>
+  <div class="footer">
+    <a href="#"> go to Blood Bank</a>
+</div>
+</div>
+<div class="span3 statbox blue noMargin" onTablet="span6" onDesktop="span3">
+  <div class="number">2 <i class="icon-arrow-right"></i></div>
+  <div class="title">transfusion requests</div>
+  <div class="footer">
+    <a href="#"> view all requests</a>
+</div>
+</div>
+<div class="span3 statbox yellow" onTablet="span6" onDesktop="span3">
+  <div class="number">0 <i class="icon-info-sign"></i></div>
+  <div class="title">blood packs expiring soon</div>
+  <div class="footer">
+    <a href="#"> go to Blood Bank</a>
+</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<div class="row-fluid">
+    <div class="span6 box">
+        <div class="box-header"><h2>Recent Donation Requests</h2></div>
+        <div class="box-content">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/5/2015</td>
+                        <td>Gerald Pharin</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>10/5/2015</td>
+                        <td>Selina Okai</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>9/5/2015</td>
+                        <td>Cliff Bogeroo</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>9/5/2015</td>
+                        <td>Martin</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="box span6">
+        <div class="box-header"><h2>Recent Transfusion Requests</h2></div>
+        <div class="box-content">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/5/2015</td>
+                        <td>Gerald Pharin</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>10/5/2015</td>
+                        <td>Godwin Abene</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>9/5/2015</td>
+                        <td>Cliff Bogeroo</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                    <tr>
+                        <td>9/5/2015</td>
+                        <td>Martin</td>
+                        <td><a href="#" class="label label-warning">Pending</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div><!--/.fluid-container-->
+
+<!-- end: Content -->
+</div><!--/#content.span10-->
+{% endblock %}
