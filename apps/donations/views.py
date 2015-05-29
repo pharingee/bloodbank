@@ -147,6 +147,11 @@ def donors(request):
 @login_required
 def donor(request, donor_id):
     donor = get_object_or_404(Donor, pk=donor_id)
+    blood = None
+    for blood in donor.donated_blood.all():
+        if not blood.is_taken:
+            blood = blood
+
     if not request.user.is_nbts:
         is_hospital = False
         for blood in donor.donated_blood.all():
@@ -165,6 +170,7 @@ def donor(request, donor_id):
             has_untaken_blood = False
             try:
                 donor = Donor.objects.get(number=form.cleaned_data['number'])
+                donor = form.save()
                 for blood_donated in donor.donated_blood.all():
                     if not blood_donated.is_taken:
                         blood = blood_donated
@@ -179,7 +185,9 @@ def donor(request, donor_id):
             return redirect(
                 reverse('donations:donor', args=[donor.id]))
 
-    return render(request, 'dashboard/donations/donor.html')
+    return render(
+        request, 'dashboard/donations/donor.html',
+        {'blood_id': blood.id, 'donor_id': donor.id, 'form': form})
 
 
 @login_required
