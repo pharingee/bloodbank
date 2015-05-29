@@ -42,12 +42,13 @@ class Blood(models.Model):
     nbts_batch_no = models.CharField(max_length=50, blank=True, null=True)
     anticoagulant = models.CharField(
         max_length=4, choices=options.ANTICOAGULANTS, blank=True, null=True)
-    date_taken = models.DateField()
+    date_taken = models.DateField(blank=True, null=True)
     is_taken = models.BooleanField(
         default=False, choices=options.YES_NO)
     is_nbts_approved = models.BooleanField(
         default=False, choices=options.YES_NO)
-    hospital = models.ForeignKey(Hospital, related_name='bloods')
+    hospital = models.ForeignKey(
+        Hospital, related_name='bloods', blank=True, null=True)
 
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)

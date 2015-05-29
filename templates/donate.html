@@ -1,5 +1,5 @@
 {% extends 'layouts/donation.html' %}
-
+{% load form_filters %}
 {% block title %}Donation :: {% endblock %}
 
 {% block main %}
@@ -14,8 +14,8 @@
                       {% csrf_token %}
                       {% for field in form %}
                           <div class="form-group">
-                              {{ field.errors }}
-                              {{ field.label_tag }} {{ field }}
+                              {{ field.errors }}{% if field.field.widget|klass != 'HiddenInput' %}
+                              {{ field.label_tag }}{% endif %}  {{ field }}
                           </div>
                       {% endfor %}
                       <div class="form-group">

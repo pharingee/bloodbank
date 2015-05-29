@@ -1,0 +1,76 @@
+{% extends 'layouts/dashboard.html' %}
+{% load form_filters %}
+{% block main %}
+  <noscript>
+        <div class="alert alert-block span10">
+          <h4 class="alert-heading">Warning!</h4>
+          <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+        </div>
+      </noscript>
+
+      <!-- start: Content -->
+      <div id="content" class="span10">
+
+
+      <ul class="breadcrumb">
+        <li>
+          <i class="icon-home"></i>
+          <a href="index.html">Home</a>
+          <i class="icon-angle-right"></i>
+        </li>
+        <li><a href="#">Blood Donations</a></li>
+      </ul>
+
+      <div class="row-fluid text-center">
+        <h2>Blood Donations</h2>
+      </div>
+
+
+      <div class="row-fluid">
+        <div class="box span12">
+          <div class="box-header">
+            <div class="row-fluid text-center">
+              <!-- <a href=""><h2 class="span2 text-center"><i class="icon-backward"></i> Prev</h2></a> -->
+              <h2 class="span12 text-center">DONOR LIST</h2>
+              <!-- <a href=""><h2 class="span2 text-center">Next <i class="icon-forward"></i></h2></a> -->
+            </div>
+          </div>
+
+          <div class="box-content">
+
+            <div class="row-fluid">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>S/No</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Number</th>
+                    <th>Age</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for donor in donor_list %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{donor.name}}</td>
+                    <td>{{donor.gender}}</td>
+                    <td>{{donor.number}}</td>
+                    <td>{{donor.age}}</td>
+                    <td><a href="{% url 'donations:donor' donor.id %}" class="btn btn-primary">Details</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </div><!--/.fluid-container-->
+
+<!-- end: Content -->
+</div><!--/#content.span10-->
+{% endblock %}

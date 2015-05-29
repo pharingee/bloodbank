@@ -6,6 +6,8 @@ urlpatterns = patterns(
     '',
     # Examples:
     url(r'^$', 'apps.common.views.home', name='home'),
+    url(r'^events/$', 'apps.common.views.events', name='events'),
+    url(r'^info/$', 'apps.common.views.info', name='info'),
     url(r'^login/$', 'apps.common.views.user_login', name='login'),
     url(r'^logout/$', 'apps.common.views.user_logout', name='logout'),
     url(r'^dashboard/$', 'apps.common.views.dashboard', name='dashboard'),

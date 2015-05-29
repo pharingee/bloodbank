@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from models import UserActivity, Hospital, User
+
+
+admin.site.register(UserActivity)
+admin.site.register(Hospital)
+admin.site.register(User)
