@@ -222,6 +222,18 @@ def list(request):
 
 
 @login_required
+def bank(request):
+    if request.user.is_nbts:
+        blood_list = Blood.objects.filter(is_nbts_approved=True)
+    else:
+        blood_list = request.user.hospital.bloods.all(is_nbts_approved=True)
+
+    return render(
+        request, 'dashboard/donations/blood-list.html',
+        {'blood_list': blood_list})
+
+
+@login_required
 def blood(request, blood_id):
     blood = get_object_or_404(Blood, pk=blood_id)
     if not request.user.is_nbts:

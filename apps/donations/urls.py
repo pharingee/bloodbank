@@ -3,6 +3,7 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns(
     '',
     url(r'^$', 'apps.donations.views.list', name='list'),
+    url(r'^bank/$', 'apps.donations.views.bank', name='bank'),
     # url(r'^add/$', 'apps.donations.views.add', name='add_donation'),
     url(r'^(?P<blood_id>[0-9]+)/$', 'apps.donations.views.blood',
         name='blood'),
