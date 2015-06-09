@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.extras.widgets import SelectDateWidget
 from models import (
-    Donor, Blood, BloodProduct, HospitalTest, NBTSTest, DonorConditionFormA,
+    Donor, Blood, BloodProduct, HospitalTest, NBGSTest, DonorConditionFormA,
     DonorConditionFormB, DonorConditionFormC, DonorConditionPreForm
 )
 from apps.users.models import Hospital
@@ -232,7 +232,7 @@ class HospitalTestForm(forms.ModelForm):
 class NBTSTestForm(forms.ModelForm):
 
     class Meta:
-        model = NBTSTest
+        model = NBGSTest
         fields = [
             'blood', 'blood_type_crossmatch', 'adverse_antibodies',
             'infectious_agents', 'blood_group_antibodies', 'hiv1', 'hiv2',

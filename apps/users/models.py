@@ -73,7 +73,7 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     contact_no = models.CharField(max_length=18)
-    is_nbts = models.BooleanField(default=False)
+    is_nbgs = models.BooleanField(default=False)
     hospital = models.ForeignKey(
         Hospital, related_name='users', blank=True, null=True)
 

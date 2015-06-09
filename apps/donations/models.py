@@ -225,7 +225,7 @@ class HospitalTest(models.Model):
         default=False, choices=options.YES_NO)
 
 
-class NBTSTest(models.Model):
+class NBGSTest(models.Model):
 
     blood = models.OneToOneField(Blood)
     blood_type_crossmatch = models.BooleanField(
